@@ -32,9 +32,9 @@ The element is the opening tag, followed by content, followed by the closing tag
 
 Elements can be placed within other elements. This is called nesting. If we wanted to state that our cat is very grumpy, we could wrap the word very in a `<strong>` element, which means that the word is to have strong(er) text formatting:
 
-```
+``
 `<p>`My cat is `<strong>`very`</strong>` grumpy.`</p>`
-```
+``
 There is a right and wrong way to do nesting. In the example above, we opened the `p` element first, then opened the `strong` element. For proper nesting, we should close the `strong` element first, before closing the `p`.
 
 ### Void elements
