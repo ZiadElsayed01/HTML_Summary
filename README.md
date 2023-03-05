@@ -6,7 +6,7 @@ HTML (HyperText Markup Language) is a markup language that tells web browsers ho
 ```
 My cat is very grumpy
 ```
-If we wanted the text to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph (<p>) element:
+If we wanted the text to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph (`<p>`) element:
 
 ```
 <p>My cat is very grumpy</p>
