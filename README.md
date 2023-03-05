@@ -18,7 +18,7 @@ If we wanted the text to stand by itself, we could specify that it is a paragrap
 
 Let's further explore our paragraph element from the previous section:
 
-![this is an image](https://developer.mozilla.org/enUS/docs/Learn/HTML/Introduction_to_HTML/Getting_started/grumpy-cat-small.png)
+![this is an image](https://github.com/ZiadElsayed01/HTML_Summary/blob/main/grumpy-cat-small.png?raw=true)
 
 The anatomy of our element is:
 
@@ -43,7 +43,5 @@ There is a right and wrong way to do nesting. In the example above, we opened th
 Not all elements follow the pattern of an opening tag, content, and a closing tag. Some elements consist of a single tag, which is typically used to insert/embed something in the document. Such elements are called void elements. For example, the `<img>` element embeds an image file onto a page:
 
 ```
-<img
-  src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png"
-  alt="Firefox icon" />
+<img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" alt="Firefox icon" />
 ```
