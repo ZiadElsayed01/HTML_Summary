@@ -3,16 +3,10 @@
 ## What is HTML?
 
 HTML (HyperText Markup Language) is a markup language that tells web browsers how to structure the web pages you visit. It can be as complicated or as simple as the web developer wants it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of content to make it appear or act in a certain way. The enclosing tags can make content into a hyperlink to connect to another page, italicize words, and so on. For example, consider the following line of text:
-
-``
-My cat is very grumpy
-``
+```My cat is very grumpy```
 
 If we wanted the text to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph `<p>` element:
-
-``
-<p> My cat is very grumpy </p>
-``
+```<p> My cat is very grumpy </p>```
 
 ## Anatomy of an HTML element
 
@@ -32,17 +26,29 @@ The element is the opening tag, followed by content, followed by the closing tag
 
 Elements can be placed within other elements. This is called nesting. If we wanted to state that our cat is very grumpy, we could wrap the word very in a `<strong>` element, which means that the word is to have strong(er) text formatting:
 
-```
-<p>My cat is <strong>very</strong> grumpy.</p>
-```
+```<p>My cat is <strong>very</strong> grumpy.</p>```
 
 There is a right and wrong way to do nesting. In the example above, we opened the `p` element first, then opened the `strong` element. For proper nesting, we should close the `strong` element first, before closing the `p`.
 
 ### Void elements
 
 Not all elements follow the pattern of an opening tag, content, and a closing tag. Some elements consist of a single tag, which is typically used to insert/embed something in the document. Such elements are called void elements. For example, the `<img>` element embeds an image file onto a page:
+```<img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" alt="Firefox icon" />```
 
-```
-<img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" alt="Firefox icon" />
-```
+This would output the following:
 
+![this is an image](https://github.com/ZiadElsayed01/HTML_Summary/blob/main/firefoxicon.png)
+
+## Attributes
+
+Elements can also have attributes. Attributes look like this:
+
+![this is an image](https://github.com/ZiadElsayed01/HTML_Summary/blob/main/grumpy-cat-attribute-small.png)
+
+Attributes contain extra information about the element that won't appear in the content. In this example, the `class` attribute is an identifying name used to target the element with style information.
+
+An attribute should have:
+
+- A space between it and the element name. (For an element with more than one attribute, the attributes should be separated by spaces too.)
+- The attribute name, followed by an equal sign.
+- An attribute value, wrapped with opening and closing quote marks.
