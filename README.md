@@ -43,7 +43,7 @@ There is a right and wrong way to do nesting. In the example above, we opened th
 Not all elements follow the pattern of an opening tag, content, and a closing tag. Some elements consist of a single tag, which is typically used to insert/embed something in the document. Such elements are called void elements. For example, the `<img>` element embeds an image file onto a page:
 
 ```html
-  <img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" alt="Firefox icon" />
+<img src="https://raw.githubusercontent.com/mdn/beginner-html-site/gh-pages/images/firefox-icon.png" alt="Firefox icon" />
 ```
 
 This would output the following:
@@ -89,13 +89,13 @@ Individual HTML elements aren't very useful on their own. Next, let's examine ho
 ```html
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <title>My test page</title>
-  </head>
-  <body>
-    <p>This is my page</p>
-  </body>
+<head>
+<meta charset="utf-8" />
+<title>My test page</title>
+</head>
+<body>
+<p>This is my page</p>
+</body>
 </html>
 ```
 
@@ -156,3 +156,130 @@ This element specifies the document's character encoding — the character set t
 If you set your character encoding to `ISO-8859-1`, for example (the character set for the Latin alphabet), your page rendering may appear all messed up:
 
 ![this is an image](https://github.com/ZiadElsayed01/HTML_Summary/blob/main/bad-encoding.png)
+
+### Adding custom icons to your site
+
+To further enrich your site design, you can add references to custom icons in your metadata, and these will be displayed in certain contexts. The most commonly used of these is the favicon (short for "favorites icon", referring to its use in the "favorites" or "bookmarks" lists in browsers).
+
+The humble favicon has been around for many years. It is the first icon of this type: a 16-pixel square icon used in multiple places. You may see (depending on the browser) favicons displayed in the browser tab containing each open page, and next to bookmarked pages in the bookmarks panel.
+
+A favicon can be added to your page by:
+
+1. Saving it in the same directory as the site's index page, saved in `.ico` format (most also support favicons in more common formats like `.gif` or `.png`)
+2. Adding the following line into your HTML's `<head>` block to reference it:
+
+```html
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+```
+
+### Applying CSS and JavaScript to HTML
+
+Just about all websites you'll use in the modern day will employ CSS to make them look cool, and JavaScript to power interactive functionality, such as video players, maps, games, and more. These are most commonly applied to a web page using the `<link>` element and the `<script>` element, respectively.
+
+- The `<link>` element should always go inside the head of your document. This takes two attributes, `rel="stylesheet"`, which indicates that it is the document's stylesheet, and href, which contains the path to the stylesheet file:
+
+```html
+<link rel="stylesheet" href="my-css-file.css" />
+```
+
+The `<script>` element should also go into the head, and should include a `src` attribute containing the path to the JavaScript you want to load, and `defer`, which basically instructs the browser to load the JavaScript after the page has finished parsing the HTML. This is useful as it makes sure that the HTML is all loaded before the JavaScript runs, so that you don't get errors resulting from JavaScript trying to access an HTML element that doesn't exist on the page yet. There are actually a number of ways to handle loading JavaScript on your page, but this is the most reliable one to use for modern browsers (for others, read Script loading strategies).
+
+```html
+<script src="my-js-file.js" defer></script>
+```
+
+### The basics: headings and paragraphs
+
+Most structured text consists of headings and paragraphs, whether you are reading a story, a newspaper, a college textbook, a magazine, etc.
+
+Structured content makes the reading experience easier and more enjoyable.
+
+In HTML, each paragraph has to be wrapped in a `<p>` element, like so:
+
+```html
+<p>I am a paragraph, oh yes I am.</p>
+```
+
+Each heading has to be wrapped in a heading element:
+
+```html
+<h1>I am the title of the story.</h1>
+```
+
+There are six heading elements: `h1`, `h2`, `h3`, `h4`, `h5`, and `h6`. Each element represents a different level of content in the document; `<h1>` represents the main heading, `<h2>` represents subheadings, `<h3>` represents sub-subheadings, and so on.
+
+You just need to bear in mind a few best practices as you create such structures:
+
+- Preferably, you should use a single `<h1>` per page—this is the top level heading, and all others sit below this in the hierarchy.
+- Make sure you use the headings in the correct order in the hierarchy. Don't use `<h3>` elements to represent subheadings, followed by `<h2>` elements to represent sub-subheadings—that doesn't make sense and will lead to weird results.
+- Of the six heading levels available, you should aim to use no more than three per page, unless you feel it is necessary. Documents with many levels (for example, a deep heading hierarchy) become unwieldy and difficult to navigate. On such occasions, it is advisable to spread the content over multiple pages if possible.
+
+### Lists
+
+Now let's turn our attention to lists. Lists are everywhere in life—from your shopping list to the list of directions you subconsciously follow to get to your house every day, to the lists of instructions you are following in these tutorials! Lists are everywhere on the web, too, and we've got three different types to worry about.
+
+### Unordered
+
+Unordered lists are used to mark up lists of items for which the order of the items doesn't matter.
+
+Every unordered list starts off with a `<ul>` element—this wraps around all the list items, The last step is to wrap each list item in a `<li>` (list item) element:
+
+```html
+<ul>
+<li>milk</li>
+<li>eggs</li>
+<li>bread</li>
+<li>hummus</li>
+</ul>
+```
+
+### Ordered
+
+Ordered lists are lists in which the order of the items does matter.
+
+The markup structure is the same as for unordered lists, except that you have to wrap the list items in an `<ol>` element, rather than `<ul>`:
+
+```html
+<ol>
+  <li>Drive to the end of the road</li>
+  <li>Turn right</li>
+  <li>Go straight across the first two roundabouts</li>
+  <li>Turn left at the third roundabout</li>
+  <li>The school is on your right, 300 meters up the road</li>
+</ol>
+```
+
+## What is a hyperlink?
+
+Hyperlinks are one of the most exciting innovations the Web has to offer. They've been a feature of the Web since the beginning, and are what makes the Web a web. Hyperlinks allow us to link documents to other documents or resources, link to specific parts of documents, or make apps available at a web address. Almost any web content can be converted to a link so that when clicked or otherwise activated the web browser goes to another web address (URL).
+
+### Anatomy of a link
+
+A basic link is created by wrapping the text or other content inside an `<a>` element and using the `href` attribute, also known as a Hypertext Reference, or target, that contains the web address.
+
+```html
+<p>
+  I'm creating a link to
+  <a href="https://www.mozilla.org/en-US/">the Mozilla homepage</a>.
+</p>
+```
+
+### Image links
+
+If you have an image you want to make into a link, use the `<a>` element to wrap the image file referenced with the `<img>` element.
+
+```html
+<a href="https://developer.mozilla.org/en-US/">
+  <img src="mdn_logo.svg" alt="MDN Web Docs homepage" />
+</a>
+```
+
+### Email links
+
+It's possible to create links or buttons that, when clicked, open a new outgoing email message rather than linking to a resource or page. This is done using the `<a>` element and the `mailto`: URL scheme.
+
+In its most basic and commonly used form, a `mailto`: link indicates the email address of the intended recipient. For example:
+
+```html
+<a href="mailto:nowhere@mozilla.org">Send email to nowhere</a>
+```
